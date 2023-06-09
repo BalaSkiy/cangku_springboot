@@ -29,6 +29,16 @@ public class UserController {
     @Resource
     private IUserService userService;
 
+    //登录
+    @PostMapping("/login")
+    public Result login(@RequestBody User user) {
+        List list = userService.lambdaQuery()
+                .eq(User::getId, user.getId())
+                .eq(User::getPassword, user.getPassword()).list();
+
+        return list.size() > 0 ? Result.success(list.get(0)) : Result.fail();
+    }
+
     @GetMapping("/list")
     public List<User> list() {
         return userService.list();

@@ -14,8 +14,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        bid
-        , bname, bclass, bauthor, bpubdate, bindate
+        bid, bname, bclass, bauthor, bpubdate, bindate
     </sql>
 
 </mapper>
